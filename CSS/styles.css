@@ -130,3 +130,13 @@ p.Descripcion {
     background-color: #e41d1d;
     color: black;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../imagenes/fondo.webp");
+    max-width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
