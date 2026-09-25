@@ -1,0 +1,132 @@
+/* reset -> se hace siempre para empezar de cero el proyecto*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li {
+    list-style-type: none;
+}
+
+/* Header Styles */
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e41d1d;
+    color: black;
+    padding: 10px;
+}
+
+.Buscador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Buscador input{
+    padding: 7px 18px;
+    border: 5px solid blueviolet;
+    border-radius: 25px;
+    display: flex;
+}
+
+.Buscador button{
+    padding: 10px 25px;
+    border: 7px solid rgb(19, 202, 234);
+    border-radius: 25px;
+    display: flex;
+    background-color: rgb(181, 245, 152);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.Buscador button:hover{
+    background-color: rgb(253, 252, 252);
+}
+
+.logo {
+    width: 370px;
+    height: 100px;
+}
+
+.nav-usuario {
+    font-size: 25px;
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+/* Main Styles */
+main {
+    padding: 20px;
+    margin: 20px;
+}
+.SeccionProductos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Para PC o pantallas grandes: 4 columnas */
+.Producto {
+    border: 4px solid #f00606;
+    padding: 15px;
+    text-align: center;
+    width: calc(25% - 20px); /* 4 por fila */
+    min-width: 220px;
+    box-sizing: border-box;
+}
+
+/* Para celulares y pantallas chicas (pantalla alargada): 1 por fila */
+@media (max-width: 600px) {
+    .Producto {
+        width: 100%; /* Cada producto ocupa toda la fila */
+    }
+}
+
+.Producto img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.Precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #06f012;
+    margin: 10px;
+}
+
+p.Descripcion {
+    font-style: italic;
+    font-size: 15px;
+    color: #333;
+    margin: 10px;
+}
+
+.boton {
+    /* https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: 0px 0px 11px 6px rgba(17,1,244,0.34);
+    -webkit-box-shadow: 0px 0px 11px 6px rgba(17,1,244,0.34);
+    -moz-box-shadow: 0px 0px 11px 6px rgba(17,1,244,0.34);
+    cursor: pointer;
+}
+
+.copy {
+    font-family: comic sans ms;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #e41d1d;
+    color: black;
+}
