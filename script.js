@@ -173,14 +173,12 @@ async function cargarProductosDesdeAPI() {
     const terminoBusqueda = (params.get("Buscar") || "").trim().toLowerCase();
 
     try {
-        // Consultamos la API REST con fetch como pide la consigna
         const respuesta = await fetch(API_URL);
         if (!respuesta.ok) {
             throw new Error(`Error HTTP: ${respuesta.status}`);
         }
         await respuesta.json();
 
-        // Usamos tus 5 productos de limpieza editables como catálogo principal
         productosCache = [...PRODUCTOS_LIMPIEZA];
 
         const filtrados = terminoBusqueda
