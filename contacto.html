@@ -1,50 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <meta name="description" content="Ponete en contacto con Alta Tienda para consultas, soporte o pedidos.">
+    <title>Contacto | Alta Tienda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./CSS/styles.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="./imagenes/logo.png" alt="Logo" class="logo">
-        <form action="./buscar.html" method="get" class="Buscador">
-            <input type="text" name="Buscar" placeholder="Buscar: " value="">
-            <button type="submit">Buscar 🕵️</button>
+        <a href="./index.html" class="marca-enlace" aria-label="Ir al inicio">
+            <img src="./imagenes/logo.png" alt="Logo de Alta Tienda" class="logo">
+        </a>
+
+        <form action="./catalogo.html" method="get" class="Buscador" role="search" aria-label="Buscar productos">
+            <label for="campo-buscar-contacto" class="sr-only">Buscar productos</label>
+            <input id="campo-buscar-contacto" type="text" name="Buscar" placeholder="Buscar productos...">
+            <button type="submit">Buscar</button>
         </form>
-        <nav>
+
+        <nav aria-label="Navegación principal">
             <ul class="nav-usuario">
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="./catalogo.html">Catalogo</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./carrito.html">Carrito</a></li>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Productos</a></li>
+                <li><a href="./index.html#resenas">Reseñas</a></li>
+                <li><a href="./contacto.html" aria-current="page">Contacto</a></li>
+                <li><a href="./carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <div class="contacto">
-            <h2>Contacto</h2>
-            <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.</p>
-            <p>Teléfono: 123-456-7890</p>
-            <p>Correo electrónico: info@altatienda.com</p>
-            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
-            <p>Horario de atención: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
-            <p></p>
-        </div>
+        <section class="SeccionContacto" aria-labelledby="titulo-contacto">
+            <div class="contacto-info">
+                <h1 id="titulo-contacto">Contacto</h1>
+                <p>Si tenés alguna pregunta o necesitás ayuda, escribinos completando el formulario.</p>
+                <p><strong>Teléfono:</strong> 123-456-7890</p>
+                <p><strong>Correo electrónico:</strong> info@altatienda.com</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
+                <p><strong>Horario de atención:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <form
+                id="form-contacto"
+                class="formulario-contacto"
+                action="https://formspree.io/f/xaeoapva"
+                method="POST"
+                novalidate
+            >
+                <div class="campo-form">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu consulta..." required></textarea>
+                </div>
+
+                <button type="submit" class="boton">Enviar mensaje</button>
+                <p id="mensaje-formulario" role="status" aria-live="polite" class="mensaje-estado"></p>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <img src="./imagenes/logo.png" alt="Logo" class="logo">
-        <p class="copy">&copy; 2026 Alta tienda me mandé.</p>
-        <nav>
+        <a href="./index.html" class="marca-enlace" aria-label="Ir al inicio">
+            <img src="./imagenes/logo.png" alt="Logo de Alta Tienda" class="logo">
+        </a>
+        <p class="copy">&copy; 2026 Alta Tienda. Todos los derechos reservados.</p>
+        <nav aria-label="Navegación del pie de página">
             <ul class="nav-usuario">
-                <li><a href="#">Home</a></li>
-                <li><a href="./catalogo.html">Catalogo</a></li>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Productos</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./carrito.html">Carrito</a></li>
+                <li><a href="./carrito.html">Carrito (<span class="contador-carrito-footer">0</span>)</a></li>
             </ul>
         </nav>
     </footer>
 </body>
 </html>
-
